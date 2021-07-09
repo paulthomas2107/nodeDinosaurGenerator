@@ -8,6 +8,7 @@ async function getDinoName() {
   const data = await response.json();
   let dinoName = data[0].join(" ");
   document.querySelector("#dinoName").textContent = dinoName;
+
 }
 
 async function getDinoImage() {
@@ -26,5 +27,5 @@ async function getDinoImage() {
   img.src = dinoImageUrl;
   img.alt = dinoAlt;
 
-  document.querySelector("body").appendChild(img);
+  document.querySelector(".generator").appendChild(img);
 }
