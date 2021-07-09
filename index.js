@@ -29,7 +29,7 @@ app.get("/dinoname", async (request, response) => {
 // Get Dino Image
 app.get("/dinoimage", async (request, response) => {
   const fetchApi = await fetch(
-    "https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=5",
+    "https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=10",
     {
       method: "GET",
       headers: {
