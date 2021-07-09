@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -9,6 +10,9 @@ app.listen(port, () => {
   console.log(`App Started: Listening on port ${port}`);
 });
 
+const api_key = process.env.API_KEY;
+console.log(api_key);
+
 // Get Dino Name
 app.get("/dinoname", async (request, response) => {
   const fetchApi = await fetch(
@@ -16,7 +20,7 @@ app.get("/dinoname", async (request, response) => {
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "e7b118db4bmshe2c07f49b82bd4fp1870dcjsn2edda42bd3aa",
+        "x-rapidapi-key": api_key,
         "x-rapidapi-host": "alexnormand-dino-ipsum.p.rapidapi.com",
       },
     }
@@ -33,7 +37,7 @@ app.get("/dinoimage", async (request, response) => {
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "e7b118db4bmshe2c07f49b82bd4fp1870dcjsn2edda42bd3aa",
+        "x-rapidapi-key": api_key,
         "x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
       },
     }
